@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My ToDo List</title>
+    <!-- css -->
+    <link rel="stylesheet" href="style.css" />
+    <!-- fontAwesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+      integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- google-font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <!-- javascript -->
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="side-bar-navigation">
+        <div class="header">
+          <form action="" data-form-header>
+            <h2>What's up,</h2>
+            <input
+              type="text"
+              placeholder="Name"
+              id="user-name-input"
+              data-input-name
+              required
+            />
+          </form>
+        </div>
+
+        <div class="filter-tasks">
+          <span
+            ><input
+              type="text"
+              placeholder="Search list content..."
+              data-search-input /><i
+              class="fa-solid fa-magnifying-glass"
+              data-search-icon
+            ></i
+          ></span>
+          <hr />
+          <ul data-lists-filter>
+            <div class="active">
+              <li><i class="fa-solid fa-infinity"></i>All</li>
+              <span data-list-count-all>0</span>
+            </div>
+            <div>
+              <li><i class="fa-regular fa-circle-check"></i>Completed</li>
+              <span data-list-completed-count>0</span>
+            </div>
+
+            <div>
+              <li><i class="fa-solid fa-list"></i>Tasks Remaining</li>
+              <span data-list-count>0</span>
+            </div>
+          </ul>
+        </div>
+        <hr />
+        <div class="lists-name">
+          <div>
+            <h3><i class="fa-regular fa-folder"></i>Lists</h3>
+            <span class="active" data-span-collapse>></span>
+          </div>
+
+          <!-- start sample -->
+          <ul data-lists>
+            <!-- <div class="active">
+              <li><i class="fa-regular fa-file-lines"></i>Study</li>
+              <span><i class="fa-regular fa-trash-can"></i></span>
+            </div>
+
+            <div>
+              <li><i class="fa-regular fa-file-lines"></i>Business</li>
+              <span><i class="fa-regular fa-trash-can"></i></span>
+            </div> -->
+          </ul>
+          <!-- end sample -->
+        </div>
+        <div class="lists-input">
+          <form action="" data-new-list-form>
+            <input
+              type="text"
+              placeholder="New list name"
+              data-new-list-input
+            />
+            <button>+</button>
+          </form>
+        </div>
+      </div>
+      <!-- end of sidebar  -->
+
+      <!-- start of main-display  -->
+      <div class="main-display">
+        <div data-list-display-container>
+          <div>
+            <h2 data-list-title></h2>
+          </div>
+          <div>
+            <ul data-tasks>
+              <!-- <div class="">
+                <li><i class="fa-regular fa-circle"></i></li>
+             
+                <span><i class="fa-regular fa-trash-can"></i></span>
+              </div>
+
+              <div>
+                <li><i class="fa-regular fa-circle"></i></li>
+                <span><i class="fa-regular fa-trash-can"></i></span>
+              </div> -->
+            </ul>
+          </div>
+
+          <div class="main-display-del-button">
+            <button data-clear-complete-tasks-button>
+              Delete Completed Tasks
+            </button>
+            <button data-clear-all-tasks-button>Delete All Tasks</button>
+          </div>
+          <div class="form-input">
+            <form action="" data-new-task-form>
+              <input
+                type="text"
+                data-new-task-input
+                placeholder="Add new task"
+              />
+              <button>+</button>
+            </form>
+          </div>
+          <div class="numSearchItem" data-search-item>
+            <p>Number of found Item(s) : <span></span></p>
+          </div>
+        </div>
+      </div>
+      <!-- end of main-display  -->
+    </div>
+    <!-- template  -->
+    <template id="task-template">
+      <div>
+        <li><i class="fa-regular fa-circle"></i></li>
+        <span><i class="fa-regular fa-trash-can"></i></span>
+      </div>
+    </template>
+  </body>
+</html>
